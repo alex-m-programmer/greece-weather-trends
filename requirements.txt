@@ -1,0 +1,8 @@
+pandas
+requests
+sqlalchemy
+tenacity
+python-dotenv
+psycopg2-binary
+plotly
+streamlit

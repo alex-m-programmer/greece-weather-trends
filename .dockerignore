@@ -1,0 +1,5 @@
+.env
+__pycache__/
+*.log
+API_Logs/
+.git/

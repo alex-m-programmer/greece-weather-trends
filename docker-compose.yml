@@ -1,0 +1,14 @@
+services:
+  weather_etl:
+    build: .
+    env_file: .env
+    command: python main.py
+    volumes:
+      - ./API_Logs:/app/API_Logs
+
+  weather_dashboard:
+    build: .
+    env_file: .env
+    command: streamlit run app.py
+    ports:
+      - "8501:8501"
