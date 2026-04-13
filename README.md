@@ -32,20 +32,17 @@ A production-ready data pipeline that extracts weather data for major Greek citi
 ## ⚙️ Setup & Installation
 
 ### 1. Clone the Repository
-```bash
 git clone [https://github.com/your-username/greece-weather-trends.git](https://github.com/alex-m-programmer/greece-weather-trends.git)
 cd greece-weather-trends
 
 2. Configure Environment Variables
 Create a file named .env in the root directory and add your credentials:
-```bash
 DATABASE_URL=postgresql://user:password@host:port/dbname
 WEATHER_API_KEY=your_visual_crossing_api_key
 
 3. Initialize the Database Constraint
 To enable the "skip duplicates" logic, run this SQL command in your database console (e.g., pgAdmin or your Cloud DB dashboard). This ensures a city cannot have two entries for the same date:
 
-```bash
 ALTER TABLE weather_data 
 ADD CONSTRAINT city_date_unique UNIQUE (city, datetime);
 🐳 Running with Docker
@@ -53,7 +50,6 @@ This project uses Docker Compose to run the data gatherer and the dashboard.
 
 Build and start the services:
 
-```bash
 docker compose up --build
 weather_etl: This container will extract the latest data, save it to your cloud DB (or skip if data exists), and then exit.
 
