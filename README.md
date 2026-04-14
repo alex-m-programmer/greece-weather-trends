@@ -32,39 +32,47 @@ A production-ready data pipeline that extracts weather data for major Greek citi
 ## ⚙️ Setup & Installation
 
 ### 1. Clone the Repository
-git clone [https://github.com/your-username/greece-weather-trends.git](https://github.com/alex-m-programmer/greece-weather-trends.git)
+```bash
+git clone [https://github.com/alex-m-programmer/greece-weather-trends.git](https://github.com/your-username/greece-weather-trends.git)
 cd greece-weather-trends
+```
 
-2. Configure Environment Variables
-Create a file named .env in the root directory and add your credentials:
+### 2. Configure Environment Variables
+Create a file named .env in the root directory. This file is ignored by Git to keep your credentials secure:
+```bash
 DATABASE_URL=postgresql://user:password@host:port/dbname
 WEATHER_API_KEY=your_visual_crossing_api_key
+```
 
-3. Initialize the Database Constraint
-To enable the "skip duplicates" logic, run this SQL command in your database console (e.g., pgAdmin or your Cloud DB dashboard). This ensures a city cannot have two entries for the same date:
+### 3. Initialize the Database Constraint
+To ensure the pipeline handles repeated runs gracefully, run this SQL command in your database console. This creates a rule that prevents the same city from having two entries for the same date:
 
+```bash
 ALTER TABLE weather_data 
 ADD CONSTRAINT city_date_unique UNIQUE (city, datetime);
-🐳 Running with Docker
-This project uses Docker Compose to run the data gatherer and the dashboard.
+```
 
-Build and start the services:
+🐳 This project uses Docker Compose to manage the ETL script and the Dashboard as separate services.
 
+Build and start all services:
+
+```Bash
 docker compose up --build
-weather_etl: This container will extract the latest data, save it to your cloud DB (or skip if data exists), and then exit.
+```
+weather_etl: Wakes up, extracts data, saves it to the database (skipping duplicates), and then shuts down.
 
-weather_dashboard: This container will stay running.
+weather_dashboard: Remains active. View it at http://localhost:8501.
 
-View the Dashboard: Open your browser to http://localhost:8501.
-
+```bash
 📊 Project Structure
-├── Dockerfile             # Defines the Python environment
-├── docker-compose.yml     # Orchestrates the ETL and Dashboard services
+├── Dockerfile             # Shared image definition for ETL and Dashboard
+├── docker-compose.yml     # Service orchestration (ETL & Dashboard)
 ├── requirements.txt       # Python dependencies
-├── main.py                # ETL entry point
-├── app.py                 # Streamlit dashboard code
-├── db.py                  # Database connection & duplicate handling logic
-├── api.py                 # API extraction logic with retries
-├── transform.py           # Data cleaning and formatting
+├── main.py                # ETL entry point and orchestration
+├── app.py                 # Streamlit dashboard UI
+├── db.py                  # Database connection & integrity logic
+├── api.py                 # API extraction logic with retry decorators
+├── transform.py           # Data cleaning & Pandas transformation
 ├── config.py              # Environment variable management
 └── logger.py              # Custom logging utility
+```
