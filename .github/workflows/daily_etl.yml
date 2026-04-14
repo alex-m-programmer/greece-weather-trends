@@ -1,0 +1,28 @@
+name: Daily Weather ETL
+
+on:
+  schedule:
+    - cron: '0 11 * * *'
+  workflow_dispatch:
+
+jobs:
+  run-etl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run ETL Script
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+        run: python main.py
