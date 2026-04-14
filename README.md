@@ -1,7 +1,7 @@
 # 🌦️ Greece Weather Trends: End-to-End ETL & Dashboard
 
 A production-ready data pipeline that extracts weather data for major Greek cities, transforms it using Python, stores it in a Cloud PostgreSQL database, and visualizes trends through an interactive Streamlit dashboard.
-
+**🔗 [View Live Dashboard](https://greece-weather-trends-qqb5pxmz2gqjcgtccedds8.streamlit.app/)**
 ---
 
 ## 🚀 Features
