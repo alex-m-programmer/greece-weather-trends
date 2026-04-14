@@ -22,6 +22,15 @@ A production-ready data pipeline that extracts weather data for major Greek citi
 
 ---
 
+## 🤖 Automation Details
+This project is fully autonomous. A GitHub Action workflow (`daily_etl.yml`) triggers every morning to:
+1. Spin up a Python environment.
+2. Connect to the Visual Crossing API.
+3. Clean and validate data via `transform.py`.
+4. Upsert data into the PostgreSQL database.
+
+---
+
 ## 📋 Prerequisites
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed.
 - A Visual Crossing API Key.
