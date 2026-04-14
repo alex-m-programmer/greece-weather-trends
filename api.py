@@ -6,7 +6,7 @@ from config import API_KEY
 from tenacity import retry, stop_after_attempt, wait_exponential
 
 @retry(stop=stop_after_attempt(4), wait=wait_exponential(multiplier=1, min=2, max=10))
-def fetch_raw_data(city, start_date="2026-04-09", end_date="2026-04-13"):
+def fetch_raw_data(city, start_date=None, end_date=None):
   if start_date is None:
     start_date = datetime.date.today()
   if end_date is None:
