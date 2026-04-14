@@ -29,6 +29,7 @@ This project is fully autonomous. A GitHub Action workflow (`daily_etl.yml`) tri
 2. Connect to the Visual Crossing API.
 3. Clean and validate data via `transform.py`.
 4. Upsert data into the PostgreSQL database.
+5. Managed via GitHub Secrets to ensure API keys and Database URIs remain encrypted and secure during runtime.
 
 ---
 
@@ -43,7 +44,7 @@ This project is fully autonomous. A GitHub Action workflow (`daily_etl.yml`) tri
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/alex-m-programmer/greece-weather-trends.git](https://github.com/your-username/greece-weather-trends.git)
+git clone [https://github.com/alex-m-programmer/greece-weather-trends.git](https://github.com/alex-m-programmer/greece-weather-trends.git)
 cd greece-weather-trends
 ```
 
