@@ -1,0 +1,14 @@
+.env
+*.env
+airflow/logs/
+airflow/plugins/
+airflow/config/airflow.cfg
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.log
+.DS_Store
+.vscode/
+.idea/

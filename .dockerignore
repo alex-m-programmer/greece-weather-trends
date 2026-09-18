@@ -1,0 +1,10 @@
+.env
+*.env
+.git
+.gitignore
+airflow/logs/
+__pycache__/
+*.pyc
+.venv/
+venv/
+README.md
