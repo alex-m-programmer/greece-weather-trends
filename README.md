@@ -91,7 +91,7 @@ Visual Crossing API
 
 ```bash
 git clone https://github.com/<alex-m-programmer>/<greece-weather-trends>.git
-cd <greece-weather-trends>
+cd greece-weather-trends
 ```
 
 ### 2. Set up the database schema
