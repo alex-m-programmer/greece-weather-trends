@@ -1,6 +1,6 @@
 # 🌤️ Greek Cities Weather ETL Pipeline
 
-An automated daily ETL pipeline that pulls weather data for five Greek cities from the Visual Crossing API, validates and transforms it, and loads it into an Azure SQL star-schema warehouse — visualized through a live Streamlit dashboard. Built with Apache Airflow, fully Dockerized.
+An automated daily ETL pipeline that pulls weather data for five Greek cities from the Visual Crossing API, validates and transforms it, and loads it into an Azure SQL star-schema warehouse — visualized through a Streamlit dashboard. Built with Apache Airflow, fully Dockerized.
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![Airflow](https://img.shields.io/badge/Airflow-3.0-red)
