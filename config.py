@@ -11,8 +11,10 @@ except (KeyError, FileNotFoundError):
 
 if not DB_URL:
     raise ValueError("CRITICAL ERROR: DATABASE_URL not found in environment variables!")
-
-API_KEY = os.getenv("WEATHER_API_KEY")
+try:
+    API_KEY = st.secrets["WEATHER_API_KEY"]
+except (KeyError, FileNotFoundError):
+    API_KEY = os.getenv("WEATHER_API_KEY")
 
 if not API_KEY:
     raise ValueError("CRITICAL ERROR: WEATHER_API_KEY not found in environment variables!")
