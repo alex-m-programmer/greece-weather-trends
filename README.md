@@ -90,7 +90,7 @@ Visual Crossing API
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/<alex-m-programmer>/<greece-weather-trends>.git
+git clone https://github.com/alex-m-programmer/greece-weather-trends.git
 cd greece-weather-trends
 ```
 
