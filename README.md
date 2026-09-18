@@ -25,7 +25,7 @@ An automated daily ETL pipeline that pulls weather data for five Greek cities fr
 Visual Crossing API
         │
         ▼
-  Airflow DAG (daily, 06:00 Europe/Athens)
+  Airflow DAG (daily, 02:00 UTC)
         │
    ┌────┴────┐
    │ Extract │  src/ingestion/api.py
