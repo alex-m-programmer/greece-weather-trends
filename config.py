@@ -4,9 +4,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 try:
-    DB_URL = st.secrets["DATABASE_URL"]
+    DB_URL = st.secrets["DB_URL"]
 except (KeyError, FileNotFoundError):
-    DB_URL = os.getenv("DATABASE_URL")
+    DB_URL = os.getenv("DB_URL")
 
 if not DB_URL:
     raise ValueError("CRITICAL ERROR: DATABASE_URL not found in environment variables!")
