@@ -132,7 +132,7 @@ docker compose exec airflow-apiserver airflow dags unpause weather_pipeline
 
 ## ⏰ Schedule
 
-The DAG runs daily at **02:00 UTC time**, pulling the **previous day's** finalized weather data (Visual Crossing blends live/forecast data for the current day, so yesterday's data is used to ensure only finalized observations are stored).
+The DAG runs daily when the Docker stack is active at **02:00 UTC time**, pulling the **previous day's** finalized weather data (Visual Crossing blends live/forecast data for the current day, so yesterday's data is used to ensure only finalized observations are stored).
 
 ---
 
